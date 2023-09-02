@@ -5,6 +5,9 @@
 - **GANs** (Generative Adversarial Networks) were introduced by Ian Goodfellow and a team from the University of Montreal in 2014.
 - They have the remarkable ability to generate entirely new content that has never been seen before.
 
+![image](https://github.com/ncahyadi/GenerativeAdversarialNetworks/assets/60286964/a9fe5458-e35d-4a64-840d-a0ac305f2177)
+
+
 ## Components
 - GANs consist of two main components:
   - **Generator**: Responsible for creating new instances of data.
