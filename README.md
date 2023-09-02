@@ -1,4 +1,4 @@
-# GenerativeAdversarialNetworks
+# GenerativeAdversarialNetworks [Main Repo]
 # Generative Adversarial Networks (GANs)
 
 ## Introduction
