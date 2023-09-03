@@ -24,6 +24,7 @@ def build_generator1():
                                                 padding='same', 
                                                 strides=(2,2), 
                                                 use_bias=False))
+    network.add(tf.keras.layers.BatchNormalization())
     network.add(tf.keras.layers.LeakyReLU())
     
     network.add(tf.keras.layers.Conv2DTranspose(filters=1, 
@@ -40,6 +41,12 @@ def build_generator1():
 def generator_loss1(fake_output):
     cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
     return cross_entropy(tf.ones_like(fake_output), fake_output)
+
+
+## wasserstein loss
+def wasserstein_genloss(fake_output):
+    g_loss = -1. * tf.math.reduce_mean(fake_output)
+    return g_loss
 
 # discriminator functions
 def build_discriminator1():
@@ -73,3 +80,8 @@ def discriminator_loss1(expected_output, fake_output):
     fake_loss = cross_entropy(tf.zeros_like(fake_output), fake_output)
     total_loss = real_loss + fake_loss
     return total_loss
+
+def wasserstein_discloss(real_output, fake_output, gradient_penalty):
+    c_lambda = 10
+    d_loss = tf.math.reduce_mean(fake_output) - tf.math.reduce_mean(real_output) + c_lambda*gradient_penalty
+    return d_loss
