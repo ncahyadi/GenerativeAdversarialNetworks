@@ -1,4 +1,4 @@
-import tensorflow_docs.vis.embed as embed
+# import tensorflow_docs.vis.embed as embed
 import imageio
 import os
 import glob

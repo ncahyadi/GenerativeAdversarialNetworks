@@ -1,6 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
+# DCGAN and WGAN
 # generator functions
 def build_generator1():
     network = tf.keras.Sequential()
@@ -85,3 +86,5 @@ def wasserstein_discloss(real_output, fake_output, gradient_penalty):
     c_lambda = 10
     d_loss = tf.math.reduce_mean(fake_output) - tf.math.reduce_mean(real_output) + c_lambda*gradient_penalty
     return d_loss
+
+

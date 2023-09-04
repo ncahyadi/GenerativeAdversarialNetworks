@@ -75,7 +75,7 @@ if __name__ == "__main__":
     batch_size = 256
     gen_lr = 0.0002
     dis_lr = 0.0002
-    epochs = 100
+    epochs = 10
     noise_dimension = 100
     number_of_images = 16
     seed = tf.random.normal([number_of_images, noise_dimension])
