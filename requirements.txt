@@ -1,0 +1,5 @@
+imageio==2.31.2
+ipython==8.12.2
+matplotlib==3.7.2
+numpy==1.25.2
+tensorflow==2.10.1
